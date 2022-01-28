@@ -25,7 +25,7 @@ public class ChildMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "Player" || other.gameObject.tag == "GroupChild")
         {
             ReadytoRun = true;
         }

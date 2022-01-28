@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Wall
   - ChildSingle
+  - GroupChild
+  - Obstacle
   layers:
   - Default
   - TransparentFX

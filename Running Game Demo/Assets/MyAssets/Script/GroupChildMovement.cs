@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementDemoRunner : MonoBehaviour
+public class GroupChildMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     Rigidbody rb;
+    public bool ReadytoRun = false;
     public float Speed;
     void Start()
     {
@@ -16,15 +16,18 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     void Update()
     {
         //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, 0, Speed);
+        if (ReadytoRun == true)
+        {
+            rb.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, 0, Speed);
+        }
 
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "GroupChild")
+        if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "Player" || other.gameObject.tag == "GroupChild")
         {
-            other.transform.parent = transform;
+            ReadytoRun = true;
         }
     }
 }
