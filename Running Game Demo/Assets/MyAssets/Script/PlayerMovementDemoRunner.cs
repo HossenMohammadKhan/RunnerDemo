@@ -7,6 +7,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     // Start is called before the first frame update
     Rigidbody rb;
     public float Speed;
+    public float xmin, xmax;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -15,16 +16,26 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
+        Vector3 playerpos = transform.position;
+        if (playerpos.x < xmin)
+        {
+            playerpos.x = xmin;
+        }
+        if (playerpos.x > xmax)
+        {
+            playerpos.x = xmax;
+        }
+        transform.position = playerpos;
+
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, 0, Speed);
 
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "GroupChild")
-        {
-            other.transform.parent = transform;
-        }
+        // if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "GroupChild")
+        // {
+        //     other.transform.parent = transform;
+        // }
     }
 }

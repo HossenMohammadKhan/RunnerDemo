@@ -564,6 +564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &18524373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3159,6 +3161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &130022836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &137708942
 GameObject:
   m_ObjectHideFlags: 0
@@ -7332,6 +7338,40 @@ Transform:
   m_Father: {fileID: 1876960580}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &353247339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353247340}
+  m_Layer: 0
+  m_Name: SingleChileHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &353247340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353247339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.071917, y: 0.7877259, z: 83.62532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 776982471}
+  - {fileID: 394041791}
+  - {fileID: 742443817}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357416942
 GameObject:
   m_ObjectHideFlags: 0
@@ -7978,6 +8018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &394041788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8036,15 +8078,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394041786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.09, y: 0, z: -121.21}
+  m_LocalPosition: {x: -3.9819171, y: -0.7877259, z: -204.83533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1377100355}
   - {fileID: 1065255093}
   - {fileID: 1865035841}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 353247340}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394419568
 GameObject:
@@ -8212,6 +8254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &396829372
 GameObject:
   m_ObjectHideFlags: 0
@@ -13354,6 +13398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &742443814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13412,15 +13458,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742443812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0, z: -115.75}
+  m_LocalPosition: {x: -6.8519173, y: -0.7877259, z: -199.37532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2048777441}
   - {fileID: 150875613}
   - {fileID: 406197519}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 353247340}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743641039
 GameObject:
@@ -14074,15 +14120,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776982467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: -129.42}
+  m_LocalPosition: {x: -7.001917, y: -0.7877259, z: -213.04532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2033263402}
   - {fileID: 58081090}
   - {fileID: 379184613}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 353247340}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &776982472
 MonoBehaviour:
@@ -14097,6 +14143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &777652268
 GameObject:
   m_ObjectHideFlags: 0
@@ -14393,6 +14441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &797281638
 GameObject:
   m_ObjectHideFlags: 0
@@ -14846,6 +14896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &821317553
 GameObject:
   m_ObjectHideFlags: 0
@@ -20147,6 +20199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &1000239947
 GameObject:
   m_ObjectHideFlags: 0
@@ -20435,6 +20489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &1004453755
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21751,6 +21807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &1061247050
 GameObject:
   m_ObjectHideFlags: 0
@@ -22400,7 +22458,7 @@ Transform:
   - {fileID: 1666513565}
   - {fileID: 18524371}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1118730642
 MonoBehaviour:
@@ -22820,6 +22878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &1143746018
 GameObject:
   m_ObjectHideFlags: 0
@@ -23093,6 +23153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &1157683689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24280,6 +24342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!1 &1206268630
 GameObject:
   m_ObjectHideFlags: 0
@@ -29514,7 +29578,7 @@ Transform:
   m_Children:
   - {fileID: 831071836}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1528293251
 GameObject:
@@ -31855,6 +31919,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReadytoRun: 0
   Speed: 7
+  xmin: -7
+  xmax: 7
 --- !u!54 &1666513567
 Rigidbody:
   m_ObjectHideFlags: 0

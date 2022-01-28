@@ -16,33 +16,42 @@ public class GroupManagement : MonoBehaviour
     {
         foreach (GameObject member in group1)
         {
-            if (member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
+            if (member != null && member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
             {
                 foreach (GameObject item in group1)
                 {
-                    item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    if (item != null)
+                    {
+                        item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    }
                 }
             }
         }
 
         foreach (GameObject member in group2)
         {
-            if (member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
+            if (member != null && member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
             {
                 foreach (GameObject item in group2)
                 {
-                    item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    if (item != null)
+                    {
+                        item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    }
                 }
             }
         }
 
         foreach (GameObject member in group3)
         {
-            if (member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
+            if (member != null && member.gameObject.GetComponent<GroupChildMovement>().ReadytoRun == true)
             {
                 foreach (GameObject item in group3)
                 {
-                    item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    if (item != null)
+                    {
+                        item.gameObject.GetComponent<GroupChildMovement>().ReadytoRun = true;
+                    }
                 }
             }
         }

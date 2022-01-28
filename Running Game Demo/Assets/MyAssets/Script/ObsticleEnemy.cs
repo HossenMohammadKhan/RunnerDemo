@@ -9,7 +9,7 @@ public class ObsticleEnemy : MonoBehaviour
         if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "Player" || other.gameObject.tag == "GroupChild")
         {
             LetsPlayAnimation();
-            Destroy(other.gameObject, 2f);
+            Destroy(other.gameObject, 0.2f);
         }
     }
 
