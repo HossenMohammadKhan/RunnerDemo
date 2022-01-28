@@ -8,13 +8,11 @@ public class ObsticleEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "Player" || other.gameObject.tag == "GroupChild")
         {
-            LetsPlayAnimation();
-            Destroy(other.gameObject, 0.2f);
+
+            other.gameObject.GetComponent<Animator>().SetTrigger("isDead");
+            Destroy(other.gameObject, 2f);
         }
     }
 
-    void LetsPlayAnimation()
-    {
 
-    }
 }

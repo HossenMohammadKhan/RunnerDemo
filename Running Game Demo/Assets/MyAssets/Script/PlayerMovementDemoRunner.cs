@@ -8,9 +8,11 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     Rigidbody rb;
     public float Speed;
     public float xmin, xmax;
+    Animator animator;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,13 +31,23 @@ public class PlayerMovementDemoRunner : MonoBehaviour
 
         rb.velocity = new Vector3(Input.GetAxis("Horizontal") * 5, 0, Speed);
 
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            animator.SetInteger("Movement", 1);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetInteger("Movement", -1);
+        }
+        else animator.SetInteger("Movement", 0);
+
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        // if (other.gameObject.tag == "ChildSingle" || other.gameObject.tag == "GroupChild")
-        // {
-        //     other.transform.parent = transform;
-        // }
+        if (other.gameObject.tag == "ChildSingle")
+        {
+            other.transform.parent = transform;
+        }
     }
 }

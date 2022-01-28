@@ -8,9 +8,11 @@ public class ChildMovement : MonoBehaviour
     private bool ReadytoRun = false;
     public float Speed;
     public float xmin, xmax;
+    Animator animator;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,15 @@ public class ChildMovement : MonoBehaviour
         //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
         if (ReadytoRun == true)
         {
+            animator.SetInteger("Movement", 0);
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                animator.SetInteger("Movement", 1);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                animator.SetInteger("Movement", -1);
+            }
             Vector3 playerpos = transform.position;
             if (playerpos.x < xmin)
             {
@@ -41,4 +52,5 @@ public class ChildMovement : MonoBehaviour
             ReadytoRun = true;
         }
     }
+
 }
