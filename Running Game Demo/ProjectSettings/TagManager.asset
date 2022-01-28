@@ -10,6 +10,7 @@ TagManager:
   - ChildSingle
   - GroupChild
   - Obstacle
+  - Enemy
   layers:
   - Default
   - TransparentFX
