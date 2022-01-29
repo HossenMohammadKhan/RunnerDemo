@@ -18,6 +18,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FindClosestEnemy();
         Vector3 playerpos = transform.position;
         if (playerpos.x < xmin)
         {
@@ -49,5 +50,55 @@ public class PlayerMovementDemoRunner : MonoBehaviour
         {
             other.transform.parent = transform;
         }
+    }
+
+    [SerializeField] private GameObject levelcomplete;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "EndCollider")
+        {
+            levelcomplete.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    private Transform player; public bool isAttacking = false; private bool a, b, c, d;
+    public GameObject[] Enemies;
+    public void FindClosestEnemy()
+    {
+        // float distancetoclosestEnemy = Mathf.Infinity;
+        // GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        // foreach (GameObject currentenemy in Enemies)
+        // {
+        //     if (currentenemy != null)
+        //     {
+        //         float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
+        //         if (distancetoEnemy < 20f)
+        //         {
+        //             if (distancetoEnemy < distancetoclosestEnemy)
+        //             {
+        //                 distancetoclosestEnemy = distancetoEnemy;
+        //                 closestEnemy = currentenemy;
+        //                 a = true;
+        //             }
+        //             if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
+        //             {
+        //                 middleEnemy = currentenemy;
+        //                 b = true;
+        //             }
+
+        //         }
+        //     }
+        // }
+        // if (closestEnemy != null && a == true)
+        // {
+        //     transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
+        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+        // }
+        // if (closestEnemy != null && b == true)
+        // {
+        //     transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
+        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+        // }
     }
 }

@@ -23,7 +23,7 @@ public class EnemyCharacter : MonoBehaviour
             animator.SetTrigger("isDead");
             other.gameObject.GetComponent<ChildMovement>().Speed = 0f;
             Destroy(other.gameObject, 2f);
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
             capsuleCollider.enabled = false;
             rb.useGravity = false;
             rb.isKinematic = true;
@@ -36,7 +36,7 @@ public class EnemyCharacter : MonoBehaviour
             animator.SetTrigger("isDead");
             other.gameObject.GetComponent<PlayerMovementDemoRunner>().Speed = 0f;
             Destroy(other.gameObject, 2f);
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
             capsuleCollider.enabled = false;
             rb.useGravity = false;
             rb.isKinematic = true;
@@ -48,7 +48,7 @@ public class EnemyCharacter : MonoBehaviour
             animator.SetTrigger("isDead");
             other.gameObject.GetComponent<GroupChildMovement>().Speed = 0f;
             Destroy(other.gameObject, 2f);
-            Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 1f);
             capsuleCollider.enabled = false;
             rb.useGravity = false;
             rb.isKinematic = true;
