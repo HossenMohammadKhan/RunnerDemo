@@ -64,7 +64,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
         }
     }
 
-    private Transform player; public bool isAttacking = false; private bool a, b, c, d;
+    private Transform player;
     public GameObject[] Enemies;
     public void FindClosestEnemy()
     {
@@ -81,22 +81,13 @@ public class PlayerMovementDemoRunner : MonoBehaviour
                     {
                         distancetoclosestEnemy = distancetoEnemy;
                         closestEnemy = currentenemy;
-                        a = true;
                     }
-
-
                 }
             }
         }
-        if (closestEnemy != null && a == true)
+        if (closestEnemy != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        }
-        if (closestEnemy != null && b == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
         }
     }
 }

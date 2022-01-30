@@ -15,10 +15,10 @@ public class ChildMovement : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
+
         if (ReadytoRun == true)
         {
             FindClosestEnemy();
@@ -66,7 +66,7 @@ public class ChildMovement : MonoBehaviour
         }
     }
 
-    private Transform player; public bool isAttacking = false; private bool a, b, c, d;
+    private Transform player;
     public GameObject[] Enemies;
     public void FindClosestEnemy()
     {
@@ -80,30 +80,20 @@ public class ChildMovement : MonoBehaviour
             if (currentenemy != null)
             {
                 float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
-                if (distancetoEnemy < 10f && this.gameObject == this.gameObject)
+                if (distancetoEnemy < 5f && this.gameObject == this.gameObject)
                 {
                     if (distancetoEnemy < distancetoclosestEnemy)
                     {
                         distancetoclosestEnemy = distancetoEnemy;
                         closestEnemy = currentenemy;
-                        a = true;
                     }
                 }
             }
         }
-        if (closestEnemy != null && a == true)
+        if (closestEnemy != null)
         {
-            if (closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked != true)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-            }
-            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+            transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
         }
-        // if (closestEnemy != null && b == true)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, middleEnemy.transform.position, 10 * Time.deltaTime);
-        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        // }
 
     }
 

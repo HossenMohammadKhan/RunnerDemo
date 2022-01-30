@@ -18,7 +18,6 @@ public class GroupChildMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
         if (ReadytoRun == true)
         {
             gameObject.GetComponentInChildren<Renderer>().material.color = Color.yellow;
@@ -32,7 +31,6 @@ public class GroupChildMovement : MonoBehaviour
             {
                 animator.SetInteger("Movement", -1);
             }
-
             Vector3 playerpos = transform.position;
             if (playerpos.x < xmin)
             {
@@ -66,7 +64,7 @@ public class GroupChildMovement : MonoBehaviour
         }
     }
 
-    private Transform player; public bool isAttacking = false; private bool a, b, c, d;
+    private Transform player;
     public GameObject[] Enemies;
     public void FindClosestEnemy()
     {
@@ -80,22 +78,19 @@ public class GroupChildMovement : MonoBehaviour
             if (currentenemy != null)
             {
                 float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
-                if (distancetoEnemy < 15f)
+                if (distancetoEnemy < 5f)
                 {
                     if (distancetoEnemy < distancetoclosestEnemy)
                     {
                         distancetoclosestEnemy = distancetoEnemy;
                         closestEnemy = currentenemy;
-                        a = true;
                     }
                 }
             }
         }
-        if (closestEnemy != null && a == true)
+        if (closestEnemy != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-            closestEnemy = null;
         }
     }
 }

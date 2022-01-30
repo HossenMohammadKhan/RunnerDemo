@@ -17,10 +17,6 @@ public class AllPlayerCheck : MonoBehaviour
     }
     private void Update()
     {
-        // if (Players.Count == 0)
-        // {
-        //     RestartPanel.SetActive(true);
-        // }
         for (var i = Players.Count - 1; i > -1; i--)
         {
             if (Players[i] == null)

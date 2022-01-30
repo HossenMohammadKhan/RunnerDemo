@@ -27,7 +27,6 @@ public class EnemyCharacter : MonoBehaviour
             capsuleCollider.enabled = false;
             rb.useGravity = false;
             rb.isKinematic = true;
-            isAttacked = true;
         }
         else if (other.gameObject.tag == "Player")
         {
@@ -55,12 +54,7 @@ public class EnemyCharacter : MonoBehaviour
         }
     }
 
-    public bool isAttacked = false;
 
-    public void GettingAttack()
-    {
-
-    }
 
 
 }
