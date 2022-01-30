@@ -13,6 +13,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody>();
         animator = gameObject.GetComponent<Animator>();
+        gameObject.GetComponentInChildren<Renderer>().material.color = Color.yellow;
     }
 
     // Update is called once per frame
@@ -48,7 +49,8 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     {
         if (other.gameObject.tag == "ChildSingle")
         {
-            other.transform.parent = transform;
+            //other.transform.parent = transform;
+            other.gameObject.GetComponentInChildren<Renderer>().material.color = Color.yellow;
         }
     }
 
@@ -66,39 +68,39 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     public GameObject[] Enemies;
     public void FindClosestEnemy()
     {
-        // float distancetoclosestEnemy = Mathf.Infinity;
-        // GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
-        // foreach (GameObject currentenemy in Enemies)
-        // {
-        //     if (currentenemy != null)
-        //     {
-        //         float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
-        //         if (distancetoEnemy < 20f)
-        //         {
-        //             if (distancetoEnemy < distancetoclosestEnemy)
-        //             {
-        //                 distancetoclosestEnemy = distancetoEnemy;
-        //                 closestEnemy = currentenemy;
-        //                 a = true;
-        //             }
-        //             if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
-        //             {
-        //                 middleEnemy = currentenemy;
-        //                 b = true;
-        //             }
+        float distancetoclosestEnemy = Mathf.Infinity;
+        GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        foreach (GameObject currentenemy in Enemies)
+        {
+            if (currentenemy != null)
+            {
+                float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
+                if (distancetoEnemy < 5f)
+                {
+                    if (distancetoEnemy < distancetoclosestEnemy)
+                    {
+                        distancetoclosestEnemy = distancetoEnemy;
+                        closestEnemy = currentenemy;
+                        a = true;
+                    }
+                    if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
+                    {
+                        middleEnemy = currentenemy;
+                        b = true;
+                    }
 
-        //         }
-        //     }
-        // }
-        // if (closestEnemy != null && a == true)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        // }
-        // if (closestEnemy != null && b == true)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        // }
+                }
+            }
+        }
+        if (closestEnemy != null && a == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
+            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+        }
+        if (closestEnemy != null && b == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
+            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+        }
     }
 }

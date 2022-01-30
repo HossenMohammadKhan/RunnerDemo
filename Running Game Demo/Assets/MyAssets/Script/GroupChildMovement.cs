@@ -21,6 +21,7 @@ public class GroupChildMovement : MonoBehaviour
         //transform.position = transform.position + new Vector3(0, 0, 1f * Time.deltaTime);
         if (ReadytoRun == true)
         {
+            gameObject.GetComponentInChildren<Renderer>().material.color = Color.yellow;
             FindClosestEnemy();
             animator.SetInteger("Movement", 0);
             if (Input.GetKey(KeyCode.RightArrow))
@@ -71,41 +72,41 @@ public class GroupChildMovement : MonoBehaviour
     {
 
 
-        // float distancetoclosestEnemy = Mathf.Infinity;
-        // GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        float distancetoclosestEnemy = Mathf.Infinity;
+        GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
 
-        // foreach (GameObject currentenemy in Enemies)
-        // {
-        //     if (currentenemy != null)
-        //     {
-        //         float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
-        //         if (distancetoEnemy < 20f)
-        //         {
-        //             if (distancetoEnemy < distancetoclosestEnemy)
-        //             {
-        //                 distancetoclosestEnemy = distancetoEnemy;
-        //                 closestEnemy = currentenemy;
-        //                 a = true;
-        //             }
-        //             if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
-        //             {
-        //                 middleEnemy = currentenemy;
-        //                 b = true;
-        //             }
+        foreach (GameObject currentenemy in Enemies)
+        {
+            if (currentenemy != null)
+            {
+                float distancetoEnemy = Vector3.Distance(currentenemy.transform.position, this.transform.position);
+                if (distancetoEnemy < 15f)
+                {
+                    if (distancetoEnemy < distancetoclosestEnemy)
+                    {
+                        distancetoclosestEnemy = distancetoEnemy;
+                        closestEnemy = currentenemy;
+                        a = true;
+                    }
+                    if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
+                    {
+                        middleEnemy = currentenemy;
+                        b = true;
+                    }
 
-        //         }
-        //     }
-        // }
-        // if (closestEnemy != null && a == true)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
-        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        //     closestEnemy = null;
-        // }
-        // if (closestEnemy != null && b == true)
-        // {
-        //     transform.position = Vector3.MoveTowards(transform.position, middleEnemy.transform.position, 10 * Time.deltaTime);
-        //     //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
-        // }
+                }
+            }
+        }
+        if (closestEnemy != null && a == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
+            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+            closestEnemy = null;
+        }
+        if (closestEnemy != null && b == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, middleEnemy.transform.position, 10 * Time.deltaTime);
+            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
+        }
     }
 }
