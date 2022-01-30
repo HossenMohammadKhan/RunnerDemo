@@ -73,7 +73,7 @@ public class GroupChildMovement : MonoBehaviour
 
 
         float distancetoclosestEnemy = Mathf.Infinity;
-        GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        GameObject closestEnemy = null;
 
         foreach (GameObject currentenemy in Enemies)
         {
@@ -88,12 +88,6 @@ public class GroupChildMovement : MonoBehaviour
                         closestEnemy = currentenemy;
                         a = true;
                     }
-                    if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
-                    {
-                        middleEnemy = currentenemy;
-                        b = true;
-                    }
-
                 }
             }
         }
@@ -102,11 +96,6 @@ public class GroupChildMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, closestEnemy.transform.position, 10 * Time.deltaTime);
             //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
             closestEnemy = null;
-        }
-        if (closestEnemy != null && b == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, middleEnemy.transform.position, 10 * Time.deltaTime);
-            //closestEnemy.gameObject.GetComponent<EnemyCharacter>().isAttacked = true;
         }
     }
 }

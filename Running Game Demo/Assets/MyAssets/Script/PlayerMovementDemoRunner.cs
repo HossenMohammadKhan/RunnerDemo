@@ -69,7 +69,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
     public void FindClosestEnemy()
     {
         float distancetoclosestEnemy = Mathf.Infinity;
-        GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        GameObject closestEnemy = null;
         foreach (GameObject currentenemy in Enemies)
         {
             if (currentenemy != null)
@@ -83,11 +83,7 @@ public class PlayerMovementDemoRunner : MonoBehaviour
                         closestEnemy = currentenemy;
                         a = true;
                     }
-                    if (distancetoEnemy < distancetoclosestEnemy && a == true && b == false && closestEnemy != currentenemy)
-                    {
-                        middleEnemy = currentenemy;
-                        b = true;
-                    }
+
 
                 }
             }

@@ -73,7 +73,7 @@ public class ChildMovement : MonoBehaviour
 
 
         float distancetoclosestEnemy = Mathf.Infinity;
-        GameObject closestEnemy = null, middleEnemy = null, farenemy = null, veryfarenemy = null;
+        GameObject closestEnemy = null;
 
         foreach (GameObject currentenemy in Enemies)
         {
